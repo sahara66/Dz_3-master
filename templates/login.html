@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Авторизация пользователя</h1>
+    <form action="/login/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-info">Отправить</button>
+    </form>
+{% endblock %}

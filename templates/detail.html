@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>{{ category.id }}. {{ category.name }}</h2>
+{% for foo in product %}
+    <hr>
+    <p>Наименование:  {{ foo.title }}</p>
+    <p>Описание продута:  {{ foo.description }}</p>
+    <p>Цена:  {{ foo.price }}</p>
+{% endfor %}
+</body>
+</html>
+
+
+

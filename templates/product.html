@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1 style="color: blueviolet">Все категории товаров</h1>
+    <hr>
+    {% for i in all_product %}
+        <a href="/product/{{ i.id }}/">
+            <p>{{ i.id }}:{{ i.name }}</p>
+        </a>
+    {% endfor %}
+
+       <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% for button in buttons %}
+                <li class="page-item"><a class="page-link" href="/product/?page={{ button }}">{{ button }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{#         <nav aria-label="Page navigation example">#}
+{#          <ul class="pagination">#}
+{#              {% for button in buttons %}#}
+{#              <li class="nav-item">#}
+{#          <a class="page-item"><a class="page-link" href="/product/" tabindex="-1" aria-disabled="true">Disabled</a>#}
+{#        </li>#}
+{#                  <li class="page-item"><a class="page-link" href="/product/?page=1">Предыдущий</a></li>#}
+{#                  <li class="page-item"><a class="page-link" href="/product/?page={{ 1 }}">{{ 1 }}</a></li>#}
+{#                  <li class="page-item"><a class="page-link" href="/product/?page={{ 2 }}">{{ 2 }}</a></li>#}
+{#                  <li class="page-item"><a class="page-link" href="/product/?page={{ 3 }}">{{ 3 }}</a></li>#}
+{#                  <li class="page-item"><a class="page-link" href="/product/?page={{ 3 }}">Следующий</a></li>#}
+{#              {% endfor %}#}
+{#          </ul>#}
+{#      </nav>#}
+{% endblock %}
+
